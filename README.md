@@ -1,10 +1,12 @@
 # Marlin-H32
 
-Just forking [alexqzd/Marlin-H32](https://github.com/alexqzd/Marlin-H32) to fix my probing issues using a Creality CR-Touch probe on a Voxelab Aquila X2 with H32 board using this [CR-Touch mount by LightValen](https://www.thingiverse.com/thing:4974329) with the stock shroud. The default probing margin was set too small, causing the X carriage bumping into the right printer frame, tensile strain on the belt, and wrong measurements the most right probing points.
+Just forking [alexqzd/Marlin-H32](https://github.com/alexqzd/Marlin-H32) to fix my probing issues using a Creality CR-Touch probe on a Voxelab Aquila X2 with H32 board using this [CR-Touch mount by LightValen](https://www.thingiverse.com/thing:4974329) with the stock shroud. The default probing margin is set too small in Alex's firmware, even with the default probe offset values (default X offset value: -40.0 mm, measured value with LightValen's mount: -42.5 mm). When creating a new mesh, this small margin causes the X carriage to bump into the right printer frame, tensile strain on the X axis belt, and wrong measurements at the most right probing points. This recompilation of Alex's firmware sets the probing margin from 20 mm to 30 mm to solve this problem.
+
+⚠️Please note that Alex does not maintain his Marlin firmwares anymore. But hey, they're still usable and superior to the stock firmware for those we do not want to use Klipper firmwares.
 
 ![Probing with the wrong margin](assets/probing-margin-fix.png)
 
-*Inaccurate measurements on the most right probing points due to the X carriage bumping into the right printer frame.*
+*Inaccurate measurements on the most right probing points due to the X carriage bumping into the right printer frame caused by a small probing margin.*
 
 ## Flashing the firmware
 
